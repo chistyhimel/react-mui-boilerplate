@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+// routes
+import Router from './routes';
+// theme
+import ThemeProvider from './theme';
+// components
+import ScrollToTop from './components/ScrollToTop';
+import ThemeColorPresets from './components/ThemeColorPresets';
+import MotionLazyContainer from './components/animate/MotionLazyContainer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ThemeProvider>
+        <ThemeColorPresets>
+          <MotionLazyContainer>
+            {/* <ProgressBarStyle />
+                <ChartStyle />
+                <Settings /> */}
+            <ScrollToTop />
+            <h1>Hello world</h1>
+            <Router />
+          </MotionLazyContainer>
+        </ThemeColorPresets>
+      </ThemeProvider>
+    </>
   );
 }
 
